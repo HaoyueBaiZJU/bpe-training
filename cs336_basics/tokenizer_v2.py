@@ -67,7 +67,8 @@ def process_chunk(start: int, end: int, file_path: str | os.PathLike, split_expr
         #for c in chunk:
         #    tokens.extend([match.encode("utf-8") for match in re.findall(pattern, c)])
 
-    return Counter(tokens)
+    #return Counter(tokens)
+    return output
 
 
 def count_pairs(
