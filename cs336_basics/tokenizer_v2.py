@@ -58,8 +58,14 @@ def process_chunk(start: int, end: int, file_path: str | os.PathLike, split_expr
         chunk = f.read(end - start).decode("utf-8", errors="ignore")
         chunk = re.split(split_expr, chunk)
         pattern = re.compile(PAT)
+
+        output = Counter()
         for c in chunk:
-            tokens.extend([match.encode("utf-8") for match in re.findall(pattern, c)])
+            for m in pattern.finditer(c):
+                output[m.group(0).encode("utf-8")] += 1
+                
+        #for c in chunk:
+        #    tokens.extend([match.encode("utf-8") for match in re.findall(pattern, c)])
 
     return Counter(tokens)
 
