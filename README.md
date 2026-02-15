@@ -29,6 +29,45 @@ wget https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main/TinySto
 cd ..
 ```
 
+
+
+
+
+
+
+## Files
+
+### `tokenizer_hw.py` (main file)
+
+You must implement the following functions:
+
+- `build_split_expr()` — regex split that preserves special tokens  
+- `pretokenize_text()` — regex pre-tokenization + byte conversion  
+- `process_chunk()` — chunk-based preprocessing  
+- `count_pairs()` — count adjacent token pairs  
+- `merge_pair()` — apply BPE merge updates  
+
+**Do not change function signatures.**
+
+---
+
+## Running Training
+
+Train the tokenizer with:
+
+```bash
+uv run tokenizer_hw.py
+```
+
+
+
+
+
+
+
+
+
+
 ## Implementation Details
 
 ### Two-Stage Approach
