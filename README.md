@@ -61,7 +61,15 @@ uv run tokenizer_hw.py
 
 
 
+Outputs will be saved to:
 
+```
+tokenizer_results/
+  *_vocab.pkl
+  *_merges.pkl
+```
+
+Training should complete within a few minutes on CPU.
 
 
 
