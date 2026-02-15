@@ -208,8 +208,8 @@ if __name__ == "__main__":
     import os.path
     filename_base = os.path.splitext(os.path.basename(data_path))[0]
     
-    os.makedirs("tokenizer_v2_results", exist_ok=True)
-    with open(f"tokenizer_v2_results/{filename_base}_vocab.json", "wb") as f:
+    os.makedirs("tokenizer_results", exist_ok=True)
+    with open(f"tokenizer_results/{filename_base}_vocab.json", "wb") as f:
         f.write(pickle.dumps(vocab))
-    with open(f"tokenizer_v2_results/{filename_base}_merges.json", "wb") as f:
+    with open(f"tokenizer_results/{filename_base}_merges.json", "wb") as f:
         f.write(pickle.dumps(merges))
