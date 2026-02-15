@@ -39,16 +39,20 @@ cd ..
 
 ### `tokenizer_hw.py` (main file)
 
+This file contains the core implementation of a Byte-Pair Encoding (BPE) tokenizer.
+You will implement the tokenizer training pipeline, including pre-tokenization, pair counting, and iterative merge updates.
+
 You must implement the following functions:
 
-- `build_split_expr()` — regex split that preserves special tokens  
-- `pretokenize_text()` — regex pre-tokenization + byte conversion  
-- `process_chunk()` — chunk-based preprocessing  
-- `count_pairs()` — count adjacent token pairs  
-- `merge_pair()` — apply BPE merge updates  
+- `build_split_expr()` — Construct a regex-based splitting expression that correctly separates text while preserving any provided special tokens (e.g., `pad`, `unk`, etc.). Special tokens must remain intact during tokenization.
+- `pretokenize_text()` — Perform regex-based pre-tokenization and convert resulting tokens into byte-level representations. This step prepares raw text for BPE training while ensuring consistent handling of whitespace, punctuation, and Unicode characters.
+- `process_chunk()` — Implement chunk-based preprocessing to allow efficient processing of large text files. This function should support scalable training by avoiding loading the entire dataset into memory at once.
+- `count_pairs()` — Count frequencies of adjacent token pairs. This is the key statistical step in BPE training used to determine which merge operation should be applied next. 
+- `merge_pair()` — Apply a selected BPE merge operation to token sequences and update counts accordingly. This function should be implemented carefully to ensure correctness and efficiency. 
 
 **Do not change function signatures.**
 
+The grading scripts will call these functions directly.
 
 
 ## Running Training
@@ -58,7 +62,17 @@ Train the tokenizer with:
 ```bash
 uv run tokenizer_hw.py
 ```
+This command will:
 
+1. Load the training text data
+2. 
+3. Perform pre-tokenization
+
+4. Iteratively learn BPE merge rules
+
+5. Save the resulting tokenizer artifacts
+
+Training should complete within a few minutes on a standard CPU machine (exact runtime depends on dataset size and implementation efficiency).
 
 
 Outputs will be saved to:
