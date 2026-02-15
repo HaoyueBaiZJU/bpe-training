@@ -49,7 +49,7 @@ You must implement the following functions:
 
 **Do not change function signatures.**
 
----
+
 
 ## Running Training
 
@@ -87,7 +87,7 @@ Training should complete within a few minutes on CPU.
 
 You must implement BPE yourself.
 
----
+
 
 ## Submission Format
 
