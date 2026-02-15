@@ -6,7 +6,7 @@ from multiprocessing import Pool, cpu_count
 import heapq
 import pickle
 
-from cs336_basics.pretokenization_example import find_chunk_boundaries
+from cs639.pretokenization_example import find_chunk_boundaries
 
 tiny_stories_val_path = "data/TinyStoriesV2-GPT4-valid.txt"
 tiny_stories_train_path = "data/TinyStoriesV2-GPT4-train.txt"
