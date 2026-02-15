@@ -1,23 +1,41 @@
-# Assignment: BPE Tokenizer Training  
-**CS 639: Deep Learning for NLP**
+# BPE Tokenizer Implementation: From Prototype to Production
 
-This assignment focuses on implementing a **byte-level Byte-Pair Encoding (BPE) tokenizer**, a core component in modern NLP systems. You will complete missing parts of a tokenizer training pipeline and train a tokenizer on real text data.
+This project implements a Byte-Pair Encoding (BPE) tokenizer with two distinct approaches: a fast prototype implementation and a memory-optimized version designed for large-scale datasets. The implementation demonstrates real-world engineering challenges in NLP, including memory management, streaming processing, and adaptive optimization strategies.
 
----
+## Project Overview
+
+The tokenizer handles datasets of varying scales:
+- **TinyStories** (2.07GB): Fast processing with the prototype implementation
+- **OpenWebText** (11.1GB): Requires memory-optimized streaming approach
+
+Key engineering challenges addressed:
+- Memory scaling from 27.8GB (TinyStories) to 180-220GB estimated (OpenWebText)
+- Adaptive processing based on dataset size
+- Trade-offs between processing time and memory efficiency
 
 ## Setup
 
 ### Environment
+We manage our environments with `uv` to ensure reproducibility, portability, and ease of use.
+Install `uv` [here](https://github.com/astral-sh/uv) (recommended), or run `pip install uv`/`brew install uv`.
+We recommend reading a bit about managing projects in `uv` [here](https://docs.astral.sh/uv/guides/projects/#managing-dependencies) (you will not regret it!).
 
-We manage environments using **uv** for reproducibility, portability, and ease of use.
+You can now run any code in the repo using
+```sh
+uv run <python_file_path>
+```
+and the environment will be automatically solved and activated when necessary.
 
-- Install `uv` (recommended): [astral-sh/uv](https://github.com/astral-sh/uv)  
-- Or install via package managers:
+### Run unit tests
 
-```bash
-pip install uv
-# or
-brew install uv
+
+```sh
+uv run pytest
+```
+
+Initially, all tests should fail with `NotImplementedError`s.
+To connect your implementation to the tests, complete the
+functions in [./tests/adapters.py](./tests/adapters.py).
 
 ### Download data
 Download the TinyStories data and a subsample of OpenWebText
