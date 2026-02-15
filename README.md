@@ -65,12 +65,9 @@ uv run tokenizer_hw.py
 This command will:
 
 1. Load the training text data
-2. 
-3. Perform pre-tokenization
-
-4. Iteratively learn BPE merge rules
-
-5. Save the resulting tokenizer artifacts
+2. Perform pre-tokenization
+3. Iteratively learn BPE merge rules
+4. Save the resulting tokenizer artifacts
 
 Training should complete within a few minutes on a standard CPU machine (exact runtime depends on dataset size and implementation efficiency).
 
