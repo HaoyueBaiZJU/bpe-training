@@ -10,8 +10,6 @@ from cs639.pretokenization_example import find_chunk_boundaries
 
 tiny_stories_val_path = "data/TinyStoriesV2-GPT4-valid.txt"
 tiny_stories_train_path = "data/TinyStoriesV2-GPT4-train.txt"
-owt_train_path = "data/owt_train.txt"
-owt_valid_path = "data/owt_valid.txt"
 
 PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
 
@@ -201,7 +199,7 @@ def train_byte_pair_encoder(
 
 if __name__ == "__main__":
     start_time = time.time()
-    data_path = owt_train_path
+    data_path = tiny_stories_train_path
     vocab, merges = train_byte_pair_encoder(data_path, 32000, ["<|endoftext|>"])
     
     end_time = time.time()
